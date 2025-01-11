@@ -23,12 +23,35 @@ struct ChatBotView: View {
         ChatBotIntro()
         
         ScrollView {
-            // Messages will got here
-            // TODO: add maessages later
-            ForEach(messages, id: \.self) {
-                message in Text(message)
+            ForEach(messages, id: \.self) { message in
+
+                if message.contains("[USER]") {
+                    let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
+                    
+                    HStack {
+                        Spacer()
+                        Text(newMessage)
+                            .padding()
+                            .background(.gray.opacity(0.15))
+                            .cornerRadius(10)
+                            .padding(.horizontal, 16)
+                            .padding(.bottom, 10)
+                    }
+                    
+                } else {
+                    HStack {
+                        Text(message)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(.green.opacity(0.8))
+                            .cornerRadius(10)
+                            .padding(.horizontal, 16)
+                            .padding(.bottom, 10)
+                        Spacer()
+                    }
+
+                }
             }
-            
         }
         
         HStack {
