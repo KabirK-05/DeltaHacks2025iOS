@@ -13,13 +13,20 @@ struct ChatBotIntro: View {
     var body: some View {
         if !promptSent {
             HStack {
+                Text("RecycloBot")
+                    .font(.largeTitle)
+                    .bold()
+                
+                // TODO: Replace when logo is made using chatgpt
+//                Image(systemName: "bubble.left.fill")
+//                    .font(.system(size: 30))
+//                    .foregroundColor(Color.green)
+//                    
                 Image("AppLogo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 75, height: 75) // Adjust size as needed
-                Text("Hello, I am Recyclomatic. Ask me anything related to waste!")
-
-            }.padding(.trailing)
+                    .frame(width: 65, height: 65)
+            }
         }
         
     }
