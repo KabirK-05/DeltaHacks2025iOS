@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct LeaderboardUser: Codable, Identifiable {
-    let id: Int
-    let createdAt: String
+    let id = UUID()
     let username: String
     let count: Int
 }
 
 class LeaderboardViewModel: ObservableObject {
     var mockData = [
-        LeaderboardUser(id: 0, createdAt: "", username: "Tory", count: 100),
-        LeaderboardUser(id: 1, createdAt: "", username: "Drake", count: 90),
-        LeaderboardUser(id: 2, createdAt: "", username: "Nicki", count: 80),
-        LeaderboardUser(id: 3, createdAt: "", username: "Travis", count: 70),
-        LeaderboardUser(id: 4, createdAt: "", username: "Carti", count: 70)
+        LeaderboardUser(username: "Tory", count: 100),
+        LeaderboardUser(username: "Drake", count: 90),
+        LeaderboardUser(username: "Nicki", count: 80),
+        LeaderboardUser(username: "Travis", count: 70),
+        LeaderboardUser(username: "Carti", count: 70)
     ]
 }
 
@@ -66,6 +65,14 @@ struct LeaderboardView: View {
         .frame(maxHeight: .infinity, alignment: .top)
         .fullScreenCover(isPresented: $showTerms) {
             TermsOfLeaderboard()
+        }
+        .task {
+            do {
+                try await DatabaseManager.shared.postScoreUpdateFor(username: "Bob", count: 10)
+            } catch {
+                print(error.localizedDescription)
+            }
+    
         }
     }
         
