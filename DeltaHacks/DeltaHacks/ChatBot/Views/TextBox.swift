@@ -10,11 +10,11 @@ import SwiftUI
 struct TextBox: View {
     // Variables
     @State var prompt = ""
-    let characterLimit = 200
+    let characterLimit = 175
     
     var body: some View {
         // Text field creation
-        TextField("Enter Recycling Questions!", text: $prompt, axis: .vertical)
+        TextField("Enter Waste Questions!", text: $prompt, axis: .vertical)
             .padding()
 //            .frame(height: 175) // Adjust height for 4 lines
             .background(

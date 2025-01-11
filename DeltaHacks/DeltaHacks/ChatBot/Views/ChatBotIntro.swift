@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct ChatBotIntro: View {
+    @State var promptSent = false // Track if the prompt has been sent
+        
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if !promptSent {
+            HStack {
+                Image("AppLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 75, height: 75) // Adjust size as needed
+                Text("Hello, I am Recyclomatic. Ask me anything related to waste!")
+
+            }.padding(.trailing)
+        }
+        
     }
 }
 
