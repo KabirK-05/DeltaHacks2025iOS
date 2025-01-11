@@ -66,16 +66,7 @@ struct LeaderboardView: View {
         .fullScreenCover(isPresented: $showTerms) {
             TermsOfLeaderboard()
         }
-        .task {
-            do {
-                try await DatabaseManager.shared.postScoreUpdateFor(username: "Bob", count: 10)
-            } catch {
-                print(error.localizedDescription)
-            }
-    
-        }
     }
-        
 }
 
 #Preview {

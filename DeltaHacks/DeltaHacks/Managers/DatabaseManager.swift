@@ -16,11 +16,13 @@ class DatabaseManager {
     let leaderboard = "leaderboard"
     
     // Fetch Leaderboards
-    func fetchLeaderboards() async throws {
-        let snapshot = try await database.collection("users").getDocuments()
-        
+    func fetchLeaderboards() async throws -> [LeaderboardUser] {
+        let snapshot = try await database.collection(leaderboard).getDocuments()
         print(snapshot.documents)
         print(snapshot.documents.first?.data())
+        
+        // getting the leaders from the database
+        return try snapshot.documents.compactMap( { try $0.data(as: LeaderboardUser.self)})
     }
     
     
