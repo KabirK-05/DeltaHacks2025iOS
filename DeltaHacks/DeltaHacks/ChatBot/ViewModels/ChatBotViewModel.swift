@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+
+
+func getBotResponse(message: String) -> String {
+    return "Test worked. The following was just entered: " + message
+}
