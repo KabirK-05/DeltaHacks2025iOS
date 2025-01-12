@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
 
 struct ChatBotView: View {
     @ObservedObject var viewModel = ViewModel()
+    @State private var firstMessage = true
     
     // Prompt variable
     @State private var messageText = ""
@@ -17,8 +23,6 @@ struct ChatBotView: View {
     // Max prompt length
     @State private var characterLimit = 175
     
-    // Keep track of previous messages in the conversation
-
     @State var messages: [Message] = []
     
     var body: some View {
@@ -39,21 +43,28 @@ struct ChatBotView: View {
                 ForEach(viewModel.messages.filter({$0.role != .system}),
                         id: \.id) { message in
                     messageView(message: message)
-                    
                 }
-                
-                
-            }.onAppear {
-                viewModel.intializeAIService()
             }
+            
+            .onAppear {
+                if firstMessage {
+                    viewModel.intializeAIService()
+                    firstMessage = false
+                }
+            }
+            .gesture(DragGesture().onChanged { _ in
+                UIApplication.shared.endEditing()
+            })  // ✅ Added drag gesture for swipe-to-dismiss keyboard
+            
+
             
             HStack {
                 TextField("Enter Questions!", text: $viewModel.currentInput, axis: .vertical)
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 10)
                         .stroke()
-                    ).onChange(of: messageText) { newValue in
-                        // Ensure the character limit is respected
+                    )
+                    .onChange(of: messageText) { newValue in
                         if newValue.count > characterLimit {
                             messageText = String(newValue.prefix(characterLimit))
                         }
@@ -62,24 +73,19 @@ struct ChatBotView: View {
                         viewModel.sendMessage()
                     }
                 
-                // Send button
                 Button {
-                    //                sendMessage(message: messageText)
                     viewModel.sendMessage()
                 } label: {
                     Image(systemName: "paperplane.fill")
+                        .foregroundColor(.green)
                 }
                 .font(.system(size: 25))
                 .padding(.horizontal, 10)
-                
             }
             .padding()
-            
         }
-        
-            
-        }
-        
+    }
+    
     func messageView(message: Message) -> some View {
         HStack {
             if message.role == .user {
@@ -90,8 +96,7 @@ struct ChatBotView: View {
                     .cornerRadius(10)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 10)
-            }
-            else {
+            } else {
                 Text(message.content)
                     .padding()
                     .foregroundColor(.white)
@@ -103,9 +108,7 @@ struct ChatBotView: View {
             }
         }
     }
-    
 }
-
 
 #Preview {
     ChatBotView()
