@@ -30,7 +30,7 @@ We are a team of passionate hackers dedicated to inspiring others to take their 
 ### **Software:**  
 - **Eco Goal Tracking**: Users set monthly goals for waste management and track their recycling, organics, garbage, and glass disposal habits.  
 - **Leaderboards**: Compete with others to become the most eco-friendly and environmentally mindful user.  
-- **Educational Chatbot**: Powered by Cohere Generative AI, the chatbot assists users in setting achievable goals, answering recycling questions, and building eco-friendly habits.  
+- **Educational Chatbot**: Powered by ChatGPT Generative AI, the chatbot assists users in setting achievable goals, answering recycling questions, and building eco-friendly habits.  
 - **User Insights**: Visualized data to show progress toward monthly eco goals and comparisons with others.
 
 ## **Installation Instructions**
@@ -38,15 +38,15 @@ We are a team of passionate hackers dedicated to inspiring others to take their 
 ## **Usage**  
 ### **For Individuals:**  
 
-1. **Interact with the Smart Trash Bin**:  
+1. **Interact with the Smart Trash Bin**:
    - Dispose of items in the bin, which uses AI to sort waste into the correct section.  
    - Track your disposal habits directly in the app.  
 
-2. **Monitor Progress**:  
+3. **Monitor Progress**:  
    - View detailed statistics about your eco-friendly actions.  
    - See how close you are to reaching your monthly goals.  
 
-3. **Compete and Learn**:  
+4. **Compete and Learn**:  
    - Check the leaderboard to compare your progress with others.  
    - Chat with the educational bot to learn more about sustainable habits and recycling tips.  
 
