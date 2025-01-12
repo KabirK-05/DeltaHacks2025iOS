@@ -15,14 +15,3 @@ struct Waste {
     let tintColor: Color
     let amount: String
 }
-
-struct wasteMetaData: Codable {
-    let garbage: Int
-    let garbageGoal: Int
-    let recycling: Int
-    let recyclingGoal: Int
-    let glass: Int
-    let glassGoal: Int
-    let organics: Int
-    let organicsGoal: Int
-}
