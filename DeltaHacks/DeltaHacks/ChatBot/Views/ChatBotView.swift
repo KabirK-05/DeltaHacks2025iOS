@@ -90,13 +90,15 @@ struct ChatBotView: View {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            withAnimation {
-                let answer = getBotResponse(message: message)
-                messages.append(answer)
+                withAnimation {
+                    let response = getBotResponse(message: message)
+                    messages.append(response)
+                }
+                
             }
         }
     }
-}
+
 
 #Preview {
     ChatBotView()
