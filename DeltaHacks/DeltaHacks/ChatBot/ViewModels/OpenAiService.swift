@@ -23,7 +23,7 @@ class OpenAiService {
 }
 
 enum Constants {
-    static let openAIApiKey = "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"
+    static let openAIApiKey = ""
 }
 
 struct OpenAIChatBody: Encodable {
