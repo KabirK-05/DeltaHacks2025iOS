@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		77DDB2BA2D33386B00695726 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77DDB2B92D33386B00695726 /* OpenAISwift */; };
 		77DDB2BD2D33412500695726 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 77DDB2BC2D33412500695726 /* OpenAI */; };
+		77DDB2E82D335D8E00695726 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 77DDB2E72D335D8E00695726 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DDB2E82D335D8E00695726 /* Alamofire in Frameworks */,
 				77DDB2BD2D33412500695726 /* OpenAI in Frameworks */,
 				77DDB2BA2D33386B00695726 /* OpenAISwift in Frameworks */,
 			);
@@ -66,6 +68,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				77DDB2F12D336F3A00695726 /* PBXTargetDependency */,
+				77DDB2F32D336F3A00695726 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				48789FBC2D2E38ED00AF5C6A /* DeltaHacks */,
@@ -74,6 +78,7 @@
 			packageProductDependencies = (
 				77DDB2B92D33386B00695726 /* OpenAISwift */,
 				77DDB2BC2D33412500695726 /* OpenAI */,
+				77DDB2E72D335D8E00695726 /* Alamofire */,
 			);
 			productName = DeltaHacks;
 			productReference = 48789FBA2D2E38ED00AF5C6A /* DeltaHacks.app */;
@@ -106,6 +111,7 @@
 			packageReferences = (
 				77DDB2B82D33386B00695726 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
 				77DDB2BB2D33412500695726 /* XCRemoteSwiftPackageReference "OpenAI" */,
+				77DDB2E62D335D8E00695726 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 48789FBB2D2E38ED00AF5C6A /* Products */;
@@ -136,6 +142,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77DDB2F12D336F3A00695726 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 77DDB2F02D336F3A00695726 /* Alamofire */;
+		};
+		77DDB2F32D336F3A00695726 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 77DDB2F22D336F3A00695726 /* AlamofireDynamic */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		48789FC62D2E38F000AF5C6A /* Debug */ = {
@@ -355,6 +372,14 @@
 				minimumVersion = 0.3.0;
 			};
 		};
+		77DDB2E62D335D8E00695726 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -367,6 +392,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 77DDB2BB2D33412500695726 /* XCRemoteSwiftPackageReference "OpenAI" */;
 			productName = OpenAI;
+		};
+		77DDB2E72D335D8E00695726 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77DDB2E62D335D8E00695726 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		77DDB2F02D336F3A00695726 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77DDB2E62D335D8E00695726 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		77DDB2F22D336F3A00695726 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77DDB2E62D335D8E00695726 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

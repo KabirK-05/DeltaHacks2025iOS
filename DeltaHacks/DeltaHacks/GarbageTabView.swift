@@ -26,6 +26,13 @@ struct GarbageTabView: View {
                 .tabItem {
                     Image(systemName: "house")
                 }
+            
+            ChatBotView()
+                .tag("Recyclobot")
+                .tabItem {
+                    Image(systemName: "wand.and.rays")
+                }
+            
             LeaderboardView()
                 .tag("Leaderboards")
                 .tabItem {

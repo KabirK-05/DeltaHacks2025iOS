@@ -6,81 +6,52 @@
 //
 
 import Foundation
-import OpenAI
-
-let key = "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"
-
-let openAI = OpenAI(apiToken: key)
-
-func getBotResponse(message: String) -> String {
-    let userMessage = Message(content: message, isUser: true)
-    let controller = ChatController()
-    controller.messages.append(userMessage)
-    controller.getBotReply()
-    return controller.outputMessages?.content ?? "Failed"
-}
-
-
-struct Message: Identifiable {
-    var id: UUID = .init()
-    var content: String
-    var isUser: Bool
-}
-
-
-class ChatController: ObservableObject {
-    @Published var messages: [Message] = []
-    @Published var outputMessages: Message? = nil
-    @Published var streamedText = "Generated text"
-    
-    let openAI = OpenAI(apiToken: key)
-    
-    func getBotReply() {
-        let query = ChatQuery(
-            messages: self.messages.map({
-                .init(role: .user, content: $0.content)!
-            }),
-            model: .gpt4_o
-        )
+extension ChatBotView {
+    class ViewModel: ObservableObject {
+        @Published var messages: [Message] = []
+        @Published var currentInput: String = ""
         
-//        openAI.chatsStream(query: query) { partialResult in
-//            switch partialResult {
-//            case .success(let result):
-//                if let content = result.choices.first?.delta.content {
-//                    DispatchQueue.main.async {
-//                        self.streamedText += content
-//                    }
-//                }
-//            case .failure(let error):
-//                print("Streaming chunk error: \(error.localizedDescription)")
-//            }
-//        } completion: { error in
-//            if let error = error {
-//                print("Streaming completion error: \(error.localizedDescription)")
-//            } else {
-//                // When streaming completes, save the final message
-//                DispatchQueue.main.async {
-//                    //self.messages.append(Message(content: self.streamedText, isUser: false))
-//                    self.outputMessages = Message(content: self.streamedText, isUser: false)
-//                }
-//            }
-//        }
-        
-        openAI.chats(query: query) { result in
-            switch result {
-            case .success(let success):
-                guard let choice = success.choices.first else {
+        private let openAIService = OpenAiService()
+        func sendMessage() {
+            let newMessage = Message(id: UUID(), role: .user, content: currentInput)
+            messages.append(newMessage)
+            currentInput = ""
+            
+            Task {
+                let response = await openAIService.sendMessage(messages: messages)
+                guard let receiveOpenAIMessage = response?.choices.first?.message else {
+                    print("Had no received message")
                     return
                 }
-                guard let message = choice.message.content?.string else { return }
-                DispatchQueue.main.async {
-                    self.messages.append(Message(content: message, isUser: false))
+                let receivedMessage = Message(id: UUID(), role: receiveOpenAIMessage.role, content: receiveOpenAIMessage.content)
+                await MainActor.run {
+                    messages.append(receivedMessage)
                 }
-            case .failure(let failure):
-                print(failure)
             }
         }
         
-        
+        func intializeAIService() {
+            // Prompt
+            let tempContent = "You are a chatbot for our app. Our app is called RecycloBot. We encourage users to have more eco-friendly habits by having them set goals when it comes to waste management. Users can track how many times they disposed of: recycling, organics, garbage and glass. Thus they are able to see if they are reaching their eco goals they set for the month. You are to help the user with any questions about recycling, waste management, building more eco friendly and mindful habits and the environment in general. You may also add if necessary information about being mindful of the environment for the well being of everyone and that them building these habits is the first step to building and eco-friendly society. Your answers will never be more than 50 words. Your first answer will be set. You will have to introduce yourself. DO NOT USE the word hello as it is used right before."
+            let tempMessages = [Message(id: UUID(), role: .assistant, content: tempContent)]
+            
+            Task {
+                let response = await openAIService.sendMessage(messages: tempMessages)
+                guard let receiveOpenAIMessage = response?.choices.first?.message else {
+                    print("Had no received message")
+                    return
+                }
+                let receivedMessage = Message(id: UUID(), role: receiveOpenAIMessage.role, content: receiveOpenAIMessage.content)
+                await MainActor.run {
+                    messages.append(receivedMessage)
+                }
+            }
+        }
     }
+}
+
+struct Message: Decodable {
+    let id: UUID
+    let role:  SenderRole
+    let content: String
 }
