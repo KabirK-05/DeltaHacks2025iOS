@@ -39,7 +39,7 @@ We are a team of passionate hackers dedicated to inspiring others to take their 
 ### **For Individuals:**  
 1. **Set Up the App**:  
    - Download the iOS app and create an account.  
-   - Set your monthly eco goals for recycling, organics, garbage, and glass.  
+   - Set your monthly eco goals for recycling, organics, garbage, and glassn (TO BE ADDED).  
 
 2. **Interact with the Smart Trash Bin**:  
    - Dispose of items in the bin, which uses AI to sort waste into the correct section.  
