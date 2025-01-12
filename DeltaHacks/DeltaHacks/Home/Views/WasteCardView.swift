@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct WasteCardView: View {
-    var waste: Waste
-    
+    @State var waste: Waste
     var body: some View {
         ZStack {
             Color(uiColor: .systemGray6)
