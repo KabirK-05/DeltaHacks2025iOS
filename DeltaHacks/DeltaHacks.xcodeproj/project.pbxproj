@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4890BEB22D33072300760269 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4890BEB12D33072300760269 /* FirebaseFirestore */; };
 		77DDB2BA2D33386B00695726 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77DDB2B92D33386B00695726 /* OpenAISwift */; };
 		77DDB2BD2D33412500695726 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 77DDB2BC2D33412500695726 /* OpenAI */; };
 		77DDB2E82D335D8E00695726 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 77DDB2E72D335D8E00695726 /* Alamofire */; };
@@ -29,6 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				4890BEB22D33072300760269 /* FirebaseFirestore in Frameworks */,
 				77DDB2E82D335D8E00695726 /* Alamofire in Frameworks */,
 				77DDB2BD2D33412500695726 /* OpenAI in Frameworks */,
 				77DDB2BA2D33386B00695726 /* OpenAISwift in Frameworks */,
@@ -76,6 +79,7 @@
 			);
 			name = DeltaHacks;
 			packageProductDependencies = (
+				4890BEB12D33072300760269 /* FirebaseFirestore */,
 				77DDB2B92D33386B00695726 /* OpenAISwift */,
 				77DDB2BC2D33412500695726 /* OpenAI */,
 				77DDB2E72D335D8E00695726 /* Alamofire */,
@@ -109,6 +113,7 @@
 			mainGroup = 48789FB12D2E38ED00AF5C6A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				4890BEB02D33072300760269 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				77DDB2B82D33386B00695726 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
 				77DDB2BB2D33412500695726 /* XCRemoteSwiftPackageReference "OpenAI" */,
 				77DDB2E62D335D8E00695726 /* XCRemoteSwiftPackageReference "Alamofire" */,
@@ -290,6 +295,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,6 +325,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +363,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4890BEB02D33072300760269 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
 		77DDB2B82D33386B00695726 /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
@@ -378,11 +391,18 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.10.2;
+
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+
+		4890BEB12D33072300760269 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4890BEB02D33072300760269 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+
 		77DDB2B92D33386B00695726 /* OpenAISwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 77DDB2B82D33386B00695726 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
