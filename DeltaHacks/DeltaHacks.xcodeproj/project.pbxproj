@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77DDB2BA2D33386B00695726 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77DDB2B92D33386B00695726 /* OpenAISwift */; };
+		77DDB2BD2D33412500695726 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 77DDB2BC2D33412500695726 /* OpenAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DDB2BD2D33412500695726 /* OpenAI in Frameworks */,
 				77DDB2BA2D33386B00695726 /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +73,7 @@
 			name = DeltaHacks;
 			packageProductDependencies = (
 				77DDB2B92D33386B00695726 /* OpenAISwift */,
+				77DDB2BC2D33412500695726 /* OpenAI */,
 			);
 			productName = DeltaHacks;
 			productReference = 48789FBA2D2E38ED00AF5C6A /* DeltaHacks.app */;
@@ -102,6 +105,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				77DDB2B82D33386B00695726 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				77DDB2BB2D33412500695726 /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 48789FBB2D2E38ED00AF5C6A /* Products */;
@@ -343,6 +347,14 @@
 				minimumVersion = 1.4.1;
 			};
 		};
+		77DDB2BB2D33412500695726 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -350,6 +362,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 77DDB2B82D33386B00695726 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
 			productName = OpenAISwift;
+		};
+		77DDB2BC2D33412500695726 /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77DDB2BB2D33412500695726 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
