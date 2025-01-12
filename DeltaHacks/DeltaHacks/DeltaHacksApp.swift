@@ -8,6 +8,8 @@
 import SwiftUI
 import FirebaseCore
 
+var globalUsername: String = "Lando"
+
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

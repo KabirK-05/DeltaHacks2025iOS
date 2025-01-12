@@ -12,7 +12,7 @@ class DatabaseManager {
     static let shared = DatabaseManager()
     
     private init() { }
-    let database = Firestore.firestore()
+    private let database = Firestore.firestore()
     let leaderboard = "leaderboard"
     
     // Fetch Leaderboards
@@ -27,10 +27,9 @@ class DatabaseManager {
     
     
     // Post (Update) Leaderboards for current user
-    func postScoreUpdateFor(username: String, count: Int) async
+    func postScoreUpdateFor(leader: LeaderboardUser) async
     throws {
-        let leader = LeaderboardUser(username: username, count: count)
         let data = try Firestore.Encoder().encode(leader)
-        try await database.collection(leaderboard).document(username).setData(data, merge: false)
+        try await database.collection(leaderboard).document(leader.username).setData(data, merge: false)
     }
 }
