@@ -42,7 +42,7 @@ camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)  # Set height
 #initialize for gpt
 
 load_dotenv()
-#openai.api_key = "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"
+
 # Your Prompt
 prompt = "Can you take a look at the object in the image and classify it as recycling, glass, garbage or organics. Answer with only the catagory. Cans, juice boxes, chip bags, paper and plastic should be in recycling. glass bottles, should be in glass. banana peels or any food should be in organics. Masks, wipes, gloves, or anything that does not fit in the other 3 catagories should be in the grabage." 
 client = OpenAI(api_key="")
