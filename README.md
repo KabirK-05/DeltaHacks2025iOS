@@ -23,10 +23,9 @@ We are a team of passionate hackers dedicated to inspiring others to take their 
 
 ## **Features**
 
-![Local Image1](image3.jpg)  ![Local Image2](image4.jpg)
-
-
-![Local Image3](image5.jpg)  ![Local Image4](image2.jpg)
+| ![Local Image1](img3.jpeg) | ![Local Image2](img4.jpeg) |
+|-----------------------------|-----------------------------|
+| ![Local Image3](img5.jpeg) | ![Local Image4](img2.jpeg) |
 
 
 ### **Hardware:**  
