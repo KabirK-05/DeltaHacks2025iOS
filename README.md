@@ -6,11 +6,11 @@ RecycloBot is an innovative project combining hardware and software to promote e
 
 Our mission is to inspire individuals to take steps toward a greener planet by providing tools to track, learn, and compete in adopting environmentally mindful habits.
 
+Submission: https://devpost.com/software/recyclobot (funny video included XD)
+
 ## Table of Contents
 - [Contributors](#contributors)
 - [Features](#features)
-- [DeltaHacks Hackathon Submission Material](#DeltaHacks-Hackathon-Submission-Material)
-- [Usage](#usage)
 - [License](#license)
 - [Feedback and Contributions](#feedback-and-contributions)
 
@@ -21,7 +21,7 @@ We are a team of passionate hackers dedicated to inspiring others to take their 
 - Aaron Ren
 - Dharav Shah
 
-## **Features**  
+## **Features**
 ### **Hardware:**  
 - **Smart Trash Bin**: Divided into sections for recycling, organics, garbage, and glass.  
 - **AI-Driven Sorting**: Integrated ChatGPT Visual AI API for real-time video analysis to detect and filter trash into the correct section.  
@@ -33,8 +33,6 @@ We are a team of passionate hackers dedicated to inspiring others to take their 
 - **Educational Chatbot**: Powered by ChatGPT Generative AI, the chatbot assists users in setting achievable goals, answering recycling questions, and building eco-friendly habits.  
 - **User Insights**: Visualized data to show progress toward monthly eco goals and comparisons with others.
 
-## **DeltaHacks Hackathon Submission Material**
-(TO BE ADDED)
 
 ## License
 
