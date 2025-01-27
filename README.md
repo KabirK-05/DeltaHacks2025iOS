@@ -8,7 +8,7 @@ Our mission is to inspire individuals to take steps toward a greener planet by p
 
 Submission: https://devpost.com/software/recyclobot (funny video included XD)
 
-<img src="img1.jpeg" alt="Local Image1" width="200">
+|<img src="img1.jpeg" alt="Local Image1" width="200">|
 
 ## Table of Contents
 - [Contributors](#contributors)
