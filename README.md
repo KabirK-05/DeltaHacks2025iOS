@@ -23,9 +23,9 @@ We are a team of passionate hackers dedicated to inspiring others to take their 
 
 ## **Features**
 
-| ![Local Image1](img3.jpeg) | ![Local Image2](img4.jpeg) |
-|-----------------------------|-----------------------------|
-| ![Local Image3](img5.jpeg) | ![Local Image4](img2.jpeg) |
+| <img src="img3.jpeg" alt="Local Image1" width="200"> | <img src="img4.jpeg" alt="Local Image2" width="200"> |
+|------------------------------------------------------|------------------------------------------------------|
+| <img src="img5.jpeg" alt="Local Image3" width="200"> | <img src="img2.jpeg" alt="Local Image4" width="200"> |
 
 
 ### **Hardware:**  
