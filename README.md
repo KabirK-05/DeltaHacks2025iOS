@@ -22,6 +22,13 @@ We are a team of passionate hackers dedicated to inspiring others to take their 
 - Dharav Shah
 
 ## **Features**
+
+![Local Image1](image3.jpg)  ![Local Image2](image4.jpg)
+
+
+![Local Image3](image5.jpg)  ![Local Image4](image2.jpg)
+
+
 ### **Hardware:**  
 - **Smart Trash Bin**: Divided into sections for recycling, organics, garbage, and glass.  
 - **AI-Driven Sorting**: Integrated ChatGPT Visual AI API for real-time video analysis to detect and filter trash into the correct section.  
