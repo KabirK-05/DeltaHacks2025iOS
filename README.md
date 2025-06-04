@@ -15,7 +15,7 @@ Submission: https://devpost.com/software/recyclobot (funny video included XD)
 - [Feedback and Contributions](#feedback-and-contributions)
 
 ## Contributors
-We are a team of passionate hackers dedicated to inspiring others to take their .
+We are a team of passionate hackers dedicated to inspiring others to take their first step towards sustainability.
 - Kabir Kumar
 - Karl-Aexandre Michaud
 - Aaron Ren
